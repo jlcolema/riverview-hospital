@@ -1,0 +1,889 @@
+/*
+
+Title:		Riverviews Master Screen Styles
+Author:		Saucepan Creative -- http://www.inthesaucepan.com
+Copyright:	2011, Riverview Hospital. All rights reserved (please don't re-use without permission).
+
+*/
+
+/* Base Styles
+--------------------------------------------- */
+
+/* Self-clearing Floats */
+
+.group:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	}
+
+/* Fluid Images and Objects */
+
+img,
+object,
+embed { max-width: 100%; }
+
+/* Optional Vanity Styles */
+
+::selection {}
+
+::-moz-selection {}
+
+img::selection { background: transparent; }
+
+img::-moz-selection { background: transparent; }
+
+body {
+	font-family: ff-enzo-web, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 100;
+	color: rgb(85, 85, 85);
+	background: rgb(242, 243, 235) url(/-/media/background.gif);
+	background-size: 150px 150px;
+	-webkit-text-size-adjust: 100%;
+	}
+
+/* Links */
+
+a {
+	outline: none;
+	text-decoration: none;
+	-webkit-tap-highlight-color: rgba(230, 28, 115, .35);
+	}
+
+a:link, a:visited {}
+
+abbr {
+	cursor: help;
+	border: none;
+	}
+
+
+/* Header
+--------------------------------------------- */
+
+header {
+	background: rgb(0,107,192);
+	background: -moz-linear-gradient(top, rgba(0,107,192,1) 0%, rgba(14,76,170,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,107,192,1)), color-stop(100%,rgba(14,76,170,1)));
+	background: -webkit-linear-gradient(top, rgba(0,107,192,1) 0%,rgba(14,76,170,1) 100%);
+	background: -o-linear-gradient(top, rgba(0,107,192,1) 0%,rgba(14,76,170,1) 100%);
+	background: -ms-linear-gradient(top, rgba(0,107,192,1) 0%,rgba(14,76,170,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006bc0', endColorstr='#0e4caa',GradientType=0 );
+	background: linear-gradient(top, rgba(0,107,192,1) 0%,rgba(14,76,170,1) 100%);
+	-webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, .35) inset;
+	-moz-box-shadow: 0 -1px 0 rgba(0, 0, 0, .35) inset;
+	box-shadow: 0 -1px 0 rgba(0, 0, 0, .35) inset;
+	background: url(/-/media/nav-background.png) center top repeat-x;
+	background-size: 250px 44px;
+	}
+
+	h1 {
+		float: left;
+		height: 44px;
+		text-align: center;
+		text-transform: uppercase;
+		text-indent: -9999px;
+		}
+
+		h1 a {
+			display: block;
+			width: 150px;
+			height: 26px;
+			padding: 14px 0 0 0;
+			color: rgba(255, 255, 255, 1);
+			text-shadow: 0 1px 0 rgba(0, 0, 0, .35);
+			background: url(/-/media/logo300x88.png) center center no-repeat;
+			background-size: 150px 44px;
+			}
+
+	header .options { float: right; }
+
+	.return {
+		float: left;
+		height: 44px;
+		}
+
+	.home .return { visibility: hidden; }
+
+		.return div { text-align: center; }
+
+			.return a {
+				display: block;
+				height: 31px;
+				padding: 13px 15px 0 15px;
+				color: rgba(255, 255, 255, 1);
+				text-shadow: 0 1px 0 rgba(0, 0, 0, .35);
+				border-left: 1px solid rgba(0, 0, 0, .35);
+				-webkit-box-shadow: 1px 0 0 rgba(255, 255, 255, .20) inset;
+				-moz-box-shadow: 1px 0 0 rgba(255, 255, 255, .20) inset;
+				box-shadow: 1px 0 0 rgba(255, 255, 255, .20) inset;
+				font-weight: 600;
+				}
+
+	.settings {
+		float: left;
+		height: 44px;
+		}
+
+		.settings div { text-indent: -9999px; }
+
+			.settings a {
+				display: block;
+				width: 44px;
+				height: 44px;
+				color: rgba(255, 255, 255, 1);
+				text-shadow: 1px 0 0 rgba(0, 0, 0, .35) inset;
+				border-left: 1px solid rgba(0, 0, 0, .35);
+				-webkit-box-shadow: 1px 0 0 rgba(255, 255, 255, .20) inset;
+				-moz-box-shadow: 1px 0 0 rgba(255, 255, 255, .20) inset;
+				box-shadow: 1px 0 0 rgba(255, 255, 255, .20) inset;
+				background: url(/-/media/gear88x88.png) center center;
+				background-size: 44px 44px;
+				}
+
+			.settings.active a {
+				background: url(/-/media/gear88x88-active.png) center center, url(/-/media/diagonals.png);
+				background-size: 44px 44px;
+				}
+
+
+/* Settings Options
+--------------------------------------------- */
+
+	.settings-options {
+		position: absolute;
+		left: 0;
+		top: 44px;
+		width: 100%;
+		height: 500px;
+		background: rgba(0, 0, 0, .65);
+		z-index: 100;
+		}
+
+	@media only screen and (device-width: 768px) {
+
+		.settings-options {
+			position: absolute;
+			left: auto;
+			right: 0;
+			top: 44px;
+			width: 300px;
+			height: auto;
+			background: transparent;
+			z-index: 100;
+			}
+
+	}
+
+		.inner-wrapper {
+			position: relative;
+			padding: 20px 0 10px 0;
+			border-bottom: 5px solid rgb(149, 151, 136);
+			background: rgb(229, 231, 216) url(/-/media/diagonals.png);
+			background-size: 44px 44px;
+			-webkit-box-shadow: 0 11px 11px rgba(0, 0, 0, .45);
+			-moz-box-shadow: 0 11px 11px rgba(0, 0, 0, .45);
+			box-shadow: 0 11px 11px rgba(0, 0, 0, .45);
+			z-index: 110;
+			}
+	
+			.font-size {
+				margin: 0 20px 10px 20px;
+				padding: 5px;
+				background: rgba(255, 255, 255, .95);
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+				-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .20);
+				-moz-box-shadow: 0 1px 0 rgba(0, 0, 0, .20);
+				box-shadow: 0 1px 0 rgba(0, 0, 0, .20);
+				}
+		
+				.font-size p {
+					float: left;
+					font-size: 16px !important;
+					padding: 9px 0 0 7px !important;
+					font-weight: 600 !important;
+					}
+		
+				.font-size ul {
+					float: right;
+					list-style: none;
+					background: rgb(235,237,225);
+					-webkit-border-radius: 5px;
+					-moz-border-radius: 5px;
+					border-radius: 5px;
+					-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .85) inset;
+					-moz-box-shadow: 0 0 3px rgba(0, 0, 0, .85) inset;
+					box-shadow: 0 0 3px rgba(0, 0, 0, .85) inset;
+					}
+
+					.font-size li {
+						float: left;
+						text-align: center;
+						}
+		
+						.font-size a {
+							display: block;
+							width: 40px;
+							height: 24px;
+							padding: 8px 0 0 0;
+							color: rgba(85, 85, 85, .45);
+							text-shadow: 0 1px 0 rgba(255, 255, 255, .85);
+							font-weight: 600;
+							}
+
+						/* .font-size .active a {
+							display: block;
+							width: 40px;
+							height: 24px;
+							padding: 8px 0 0 0;
+							color: rgba(255, 255, 255, 1);
+							text-shadow: 0 1px 0 rgba(0, 0, 0, .35);
+							border: 1px solid rgba(0, 0, 0, .45);
+							-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .35), 0 0 5px rgba(0, 0, 0, .65) inset;
+							border-radius: 5px;
+							background: rgb(73,138,188);
+							background: -moz-linear-gradient(top, rgba(73,138,188,1) 0%, rgba(5,74,170,1) 100%);
+							background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(5,74,170,1)), color-stop(100%,rgba(73,138,188,1)));
+							background: -webkit-linear-gradient(top, rgba(5,74,170,1) 0%,rgba(73,138,188,1) 100%);
+							background: -o-linear-gradient(top, rgba(73,138,188,1) 0%,rgba(5,74,170,1) 100%);
+							background: -ms-linear-gradient(top, rgba(73,138,188,1) 0%,rgba(5,74,170,1) 100%);
+							filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#498abc', endColorstr='#054aaa',GradientType=0 );
+							background: linear-gradient(top, rgba(5,74,170,1) 0%,rgba(73,138,188,1) 100%);
+							} */
+
+						.font-size .active a {
+							display: block;
+							width: 40px;
+							height: 24px;
+							padding: 8px 0 0 0;
+							color: rgb(85, 85, 85);
+							text-shadow: 0 1px 0 rgba(255, 255, 255, .85);
+							border: 1px solid rgb(124, 128, 103);
+							-webkit-border-radius: 5px;
+							-moz-border-radius: 5px;
+							border-radius: 5px;
+							-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .35) 0 1px 1px rgba(0, 0, 0, .65);
+							-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .35) 0 1px 1px rgba(0, 0, 0, .65);
+							box-shadow: 0 1px 0 rgba(255, 255, 255, .35), 0 1px 1px rgba(0, 0, 0, .65);
+							background: rgb(235,237,225); /* Old browsers */
+							background: -moz-linear-gradient(top, rgba(235,237,225,1) 0%, rgba(185,191,153,1) 100%); /* FF3.6+ */
+							background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(235,237,225,1)), color-stop(100%,rgba(185,191,153,1))); /* Chrome,Safari4+ */
+							background: -webkit-linear-gradient(top, rgba(235,237,225,1) 0%,rgba(185,191,153,1) 100%); /* Chrome10+,Safari5.1+ */
+							background: -o-linear-gradient(top, rgba(235,237,225,1) 0%,rgba(185,191,153,1) 100%); /* Opera11.10+ */
+							background: -ms-linear-gradient(top, rgba(235,237,225,1) 0%,rgba(185,191,153,1) 100%); /* IE10+ */
+							filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebede1', endColorstr='#b9bf99',GradientType=0 ); /* IE6-9 */
+							background: linear-gradient(top, rgba(235,237,225,1) 0%,rgba(185,191,153,1) 100%); /* W3C */
+							}
+		
+			.feedback {
+				margin: 0 20px 10px 20px;
+				padding: 5px;
+				border: 1px solid rgb(124, 128, 103);
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+				background: rgb(235,237,225); /* Old browsers */
+				background: -moz-linear-gradient(top, rgba(235,237,225,1) 0%, rgba(185,191,153,1) 100%); /* FF3.6+ */
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(235,237,225,1)), color-stop(100%,rgba(185,191,153,1))); /* Chrome,Safari4+ */
+				background: -webkit-linear-gradient(top, rgba(235,237,225,1) 0%,rgba(185,191,153,1) 100%); /* Chrome10+,Safari5.1+ */
+				background: -o-linear-gradient(top, rgba(235,237,225,1) 0%,rgba(185,191,153,1) 100%); /* Opera11.10+ */
+				background: -ms-linear-gradient(top, rgba(235,237,225,1) 0%,rgba(185,191,153,1) 100%); /* IE10+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebede1', endColorstr='#b9bf99',GradientType=0 ); /* IE6-9 */
+				background: linear-gradient(top, rgba(235,237,225,1) 0%,rgba(185,191,153,1) 100%); /* W3C */
+				-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .20);
+				}
+		
+				.feedback p {
+					font-size: 16px !important;
+					text-align: center;
+					font-weight: 600;
+					}
+		
+					.feedback a {
+						display: block;
+						padding: 8px 0;
+						color: rgb(85, 85, 85);
+						text-shadow: 0 1px 0 rgba(255, 255, 255, .65);
+						}
+		
+			.close {
+				position: absolute;
+				font-size: 16px !important;
+				right: 20px;
+				bottom: -37px;
+				font-weight: 600;
+				}
+		
+				.close a {
+					display: block;
+					height: 25px;
+					padding: 6px 15px 0 15px;
+					text-align: center;
+					color: rgba(255, 255, 255, .85);
+					background: rgb(148,152,135); /* Old browsers */
+					background: -moz-linear-gradient(top, rgba(148,152,135,1) 0%, rgba(148,152,135,1) 25%, rgba(124,127,113,1) 100%); /* FF3.6+ */
+					background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(148,152,135,1)), color-stop(25%,rgba(148,152,135,1)), color-stop(100%,rgba(124,127,113,1))); /* Chrome,Safari4+ */
+					background: -webkit-linear-gradient(top, rgba(148,152,135,1) 0%,rgba(148,152,135,1) 25%,rgba(124,127,113,1) 100%); /* Chrome10+,Safari5.1+ */
+					background: -o-linear-gradient(top, rgba(148,152,135,1) 0%,rgba(148,152,135,1) 25%,rgba(124,127,113,1) 100%); /* Opera11.10+ */
+					background: -ms-linear-gradient(top, rgba(148,152,135,1) 0%,rgba(148,152,135,1) 25%,rgba(124,127,113,1) 100%); /* IE10+ */
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#949887', endColorstr='#7c7f71',GradientType=0 ); /* IE6-9 */
+					background: linear-gradient(top, rgba(148,152,135,1) 0%,rgba(148,152,135,1) 25%,rgba(124,127,113,1) 100%); /* W3C */
+					-webkit-border-radius: 0 0 9px 9px;
+					-moz-border-radius: 0 0 9px 9px;
+					border-radius: 0 0 9px 9px;
+					border: 1px solid rgb(168, 172, 153);
+					border-top: none;
+					-webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, .45);
+					-moz-box-shadow: 0 5px 5px rgba(0, 0, 0, .45);
+					box-shadow: 0 5px 5px rgba(0, 0, 0, .45);
+					text-shadow: 0 1px 0 rgba(0, 0, 0, .35);
+					}
+
+
+
+/* Article Listing
+--------------------------------------------- */
+
+.articles { padding: 10px; }
+
+.main { padding: 20px 10px; }
+
+	article {
+		padding: 10px 0;
+		border-bottom: 1px solid rgb(156, 156, 154);
+		-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .65);
+		background: url(/-/media/arrow.png) right center no-repeat;
+		background-size: 10px 14px;
+		}
+
+	.article article {
+		padding: 0 0 10px 0;
+		background: none;
+		}
+
+	article.highlighted {
+		position: relative;
+		padding: 0;
+		z-index: 1;
+		background: none;
+		}
+
+		.home article a { display: block; }
+	
+		.home article a:after {
+			content: ".";
+			display: block;
+			height: 0;
+			clear: both;
+			visibility: hidden;
+			}
+
+			.home img {
+				float: left;
+				display: block;
+				width: 25%;
+				}
+
+			article.highlighted img {
+				float: none;
+				width: 100%;
+				}
+
+			.header {
+				float: left;
+				width: 75%;
+				}
+
+			.highlighted .header {
+				position: absolute;
+				left: 0;
+				float: none;
+				bottom: 0;
+				width: 100%;
+				padding: 10px 0;
+				background: rgba(255, 255, 255, .65);
+				z-index: 5;
+				}
+
+				.articles h2 {
+					padding: 20px 0 20px 0;
+					border-bottom: 1px solid rgb(156, 156, 154);
+					text-transform: uppercase;
+					font-size: 14px;
+					color: rgb(128, 128, 128);
+					font-weight: 600;
+					}
+
+				.articles article h2 {
+					margin: 0 0 7px 0;
+					padding: 0 10px;
+					border: none;
+					font-size: 16px;
+					line-height: 19px;
+					font-weight: bold;
+					color: rgb(33, 33, 33);
+					text-transform: none;
+					}
+
+				.article article h2 {
+					font-size: 18px;
+					line-height: 21px;
+					}
+
+					.articles h2 i {
+						float: right;
+						font-family: ff-tisa-web-pro, Georgia, Times, "Times New Roman", serif;
+						font-weight: 100;
+						text-transform: none;
+						}
+
+				.highlighted h2 {
+					margin: 0 0 5px 0;
+					padding: 0 10px;
+					font-size: 18px;
+					line-height: 21px;
+					color: rgb(33, 33, 33);
+					text-transform: normal;
+					}
+
+				.article article h2 {
+					font-size: 21px;
+					line-height: 25px;
+					color: rgb(33, 33, 33);
+					}
+
+				.main article h2 { margin: 0 0 20px 0; }
+
+				.highlighted h3 {
+					position: absolute;
+					right: -10px;
+					top: 15px;
+					padding: 8px 15px 0 20px;
+					height: 22px;
+					color: rgb(255, 255, 255);
+					background: url(/-/media/featured-background.png);
+					background-size: 150px 30px;
+					font-size: 14px;
+					font-weight: normal;
+					font-family: ff-tisa-web-pro, Georgia, Times, "Times New Roman", serif;
+					font-style: italic;
+					text-shadow: 0 1px 0 rgba(0, 0, 0, .25);
+					z-index: 10;
+					}
+		
+				.home p {
+					padding: 0 10px;
+					color: rgb(128, 128, 128);
+					font-size: 12px;
+					}
+
+				.home .header p { font-family: ff-tisa-web-pro, Georgia, Times, "Times New Roman", serif; }
+
+				.article article p {
+					margin: 0 0 19px 0;
+					font-size: 16px;
+					line-height: 23px;
+					color: rgb(55, 55, 55);
+					font-family: ff-tisa-web-pro, Georgia, Times, "Times New Roman", serif;
+					}
+
+				.article .small article p {
+					margin: 0 0 15px 0;
+					font-size: 14px;
+					line-height: 21px;
+					}
+
+				.article .large article p {
+					margin: 0 0 21px 0;
+					font-size: 18px;
+					line-height: 27px;
+					}
+
+				.article article .category {
+					position: relative;
+					left: -10px;
+					display: inline-block;
+					width: auto;
+					height: 16px;
+					margin: 0 0 15px 0 !important;
+					padding: 0 12px 0 10px;
+					font-size: 12px;
+					line-height: 15px;
+					font-family: ff-enzo-web, Helvetica, Arial, sans-serif;
+					text-transform: uppercase;
+					margin: 0;
+					color: rgba(0, 0, 0, .35);
+					background: rgba(208, 200, 180, .45) url(/-/media/category-background.png) right center no-repeat;
+					background-size: 150px 16px;
+					text-shadow: 0 1px 0 rgba(255, 255, 255, .45);
+					font-weight: 600;
+					}
+
+				.article article .byline {
+					padding: 0 0 5px 0;
+					font-style: italic;
+					border-top: 1px solid rgba(156, 156, 154, .35);
+					border-bottom: 1px solid rgba(156, 156, 154, .35);
+					-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .65), 0 1px 0 rgba(255, 255, 255, .65) inset;
+					}
+
+				.highlighted p { padding: 0 10px; }
+
+	/* Read More */
+
+	.read-more { padding: 20px 0 0 0; }
+
+		.read-more-options { padding: 0 0 20px 0; }
+
+		.a-heartfelt-thanks .read-more-options { padding: 0; }
+
+			.read-more-options h3 { float: left; }
+
+			.read-more-options p {
+				float: right;
+				padding: 0;
+				line-height: 16px;
+				font-size: 12px;
+				text-transform: uppercase;
+				font-weight: 600;
+				}
+
+				.read-more-options p a { color: rgb(93, 191, 220); }
+
+		.read-more section { background: url(/-/media/vertical-separator.png) center top no-repeat; }
+
+		.read-more article {
+			float: left;
+			width: 50%;
+			padding: 20px 0 10px 0;
+			border: none;
+			border-top: 1px solid rgb(156, 156, 154);
+			background: none;
+			-webkit-box-shadow: none;
+			}
+
+			.read-more article i {
+				display: block;
+				margin: 0 0 10px 0;
+				font-size: 0.75em;
+				font-style: normal;
+				font-family: ff-tisa-web-pro, Georgia, Times, "Times New Roman", serif;
+				text-transform: uppercase;
+				color: rgb(128, 128, 128);
+				}
+
+			.home .read-more article:first-child i { visibility: hidden; }
+
+			.read-more article h2 {
+				margin: 0;
+				padding: 0;
+				color: rgb(85, 85, 85);
+				font-size: 16px;
+				line-height: 19px;
+				}
+
+			.home .read-more article:first-child h2 { visibility: hidden; }
+
+		.read-more .previous {}
+
+			.read-more .previous a {
+				display: block;
+				padding: 0 20px 0 0;
+				}
+
+		.read-more .next { text-align: right; }
+
+			.read-more .next a {
+				display: block;
+				padding: 0 0 0 20px;
+				}
+
+
+/* Single Article
+--------------------------------------------- */
+
+.main {}
+
+	.upcoming-events article h3 {
+		margin: 0 0 19px 0;
+		font-size: 16px;
+		line-height: 23px;
+		color: rgb(55, 55, 55);
+		font-family: ff-tisa-web-pro, Georgia, Times, "Times New Roman", serif;
+		font-weight: normal;
+		}
+
+	.prevention-is-key article h3,
+	.coupon h3,
+	.riverview-health-fair article h3,
+	.riverview-health-fair article h4,
+	.kids-day article h3,
+	.a-heartfelt-thanks h3,
+	.a-heartfelt-thanks h4 { margin: 0 0 19px 0; }
+
+	.upcoming-events article h4 {
+		margin: 10px 0 25px 0;
+		padding: 10px 0;
+		text-transform: uppercase;
+		font-weight: 600;
+		color: rgb(150, 150, 150);
+		border-top: 1px solid rgb(185, 185, 181);
+		border-bottom: 1px solid rgb(185, 185, 181);
+		-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .65), 0 1px 0 rgba(255, 255, 255, .65) inset;
+		-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .65), 0 1px 0 rgba(255, 255, 255, .65) inset;
+		box-shadow: 0 1px 0 rgba(255, 255, 255, .65), 0 1px 0 rgba(255, 255, 255, .65) inset;
+		}
+
+	.upcoming-events article h5 { margin: 0 0 9px 0; }
+
+	.main .full-width {
+		margin: 0 0 10px 0;
+		border: 3px solid rgb(255, 255, 255);
+		-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .35);
+		-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .35);
+		box-shadow: 0 1px 2px rgba(0, 0, 0, .35);
+		}
+
+		.main .full-width img { display: block; }
+
+	aside {
+		margin: 0 0 10px 0;
+		padding: 20px;
+		background: rgb(223, 224, 217);
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		-webkit-box-shadow: 0 0 7px rgba(0, 0, 0, .25) inset;
+		-moz-box-shadow: 0 0 7px rgba(0, 0, 0, .25) inset;
+		box-shadow: 0 0 7px rgba(0, 0, 0, .25) inset;
+		}
+
+		aside h3 { margin: 0 0 11px 0; }
+
+	.main p a { color: rgb(97, 151, 174); }
+
+	aside ul,
+	.main ul { padding: 0 0 0 17px; }
+
+	.main ul { margin: 0 0 19px 0; }
+
+		aside li,
+		.main ul {
+			list-style-position: outside;
+			list-style-type: square;
+			line-height: 19px;
+			}
+
+	.main dl { margin: 19px 0 0 0; }
+
+		.main dt {
+			margin: 0 0 7px 0;
+			font-weight: bold;
+			}
+
+		.main dd {
+			margin: 0 0 19px 0;
+			font-size: 16px;
+			line-height: 23px;
+			color: rgb(55, 55, 55);
+			font-family: ff-tisa-web-pro, Georgia, Times, "Times New Roman", serif;
+			}
+
+	figure {}
+
+		figcaption {
+			margin: 5px 0 19px 0;
+			font-size: 12px;
+			line-height: 19px;
+			color: rgba(55, 55, 55, .65);
+			font-family: ff-enzo-web, Helvetica, Arial, sans-serif;
+			}
+
+		.impacting-the-community figcaption p,
+		.eat-healthfully-live-fully-healthy figcaption p,
+		.a-revolution-in-speech-therapy figcaption p {
+			font-size: 12px;
+			line-height: 19px;
+			color: rgba(55, 55, 55, .65);
+			}
+
+		.eat-healthfully-live-fully-healthy figcaption p { margin: 0; }
+
+	.coupon {
+		margin: 0 0 19px 0;
+		border: 2px dashed rgb(128, 128, 128);
+		background: rgb(255, 255, 255);
+		}
+
+		.coupon a {
+			display: block;
+			padding: 20px 20px 20px 20px;
+			color: rgb(97, 151, 174);
+			}
+
+			.coupon p a { color: rgb(97, 151, 174); }
+
+		.coupon p:last-child { margin: 0; }
+
+/* Footer
+--------------------------------------------- */
+
+footer {
+	height: 44px;
+	overflow-y: hidden;
+	color: rgb(255, 255, 255);
+	background: rgb(1, 103, 189) url(/-/media/footer-background.png) center top repeat-x;
+	background-size: 250px 44px;
+	}
+
+	footer ul {
+		font-size: 16px;
+		color: rgb(255, 255, 255);
+		list-style: none;
+		font-weight: 600;
+		}
+
+		footer .copyright {
+			float: left;
+			width: 65%;
+			height: 30px;
+			padding: 14px 0 0 10px;
+			text-shadow: 0 1px 0 rgba(0, 0, 0, .35);
+			}
+
+		footer .legal {
+			float: right;
+			width: 30%;
+			}
+
+			footer .legal a {
+				float: right;
+				display: inline-block;
+				height: 30px;
+				padding: 14px 15px 0 15px;
+				color: rgba(255, 255, 255, 1);
+				text-shadow: 0 1px 0 rgba(0, 0, 0, .35);
+				border-left: 1px solid rgba(0, 0, 0, .35);
+				-webkit-box-shadow: 1px 0 0 rgba(255, 255, 255, .20) inset;
+				-moz-box-shadow: 1px 0 0 rgba(255, 255, 255, .20) inset;
+				box-shadow: 1px 0 0 rgba(255, 255, 255, .20) inset;
+				text-align: right;
+				}
+
+/* Add to Home Screen Notification
+--------------------------------------------- */
+
+.add-to-home-screen {
+	position: absolute;
+	display: none;
+	left: 20px;
+	bottom: 20px;
+	width: 238px;
+	padding: 20px;
+	background: -moz-linear-gradient(top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.8)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0.8) 0%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(0,0,0,0.8) 0%,rgba(0,0,0,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(0,0,0,0.8) 0%,rgba(0,0,0,1) 100%); /* IE10+ */
+	background: linear-gradient(top, rgba(0,0,0,0.8) 0%,rgba(0,0,0,1) 100%); /* W3C */
+	border: 1px solid rgb(255, 255, 255);
+	-webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, .65);
+	-moz-box-shadow: 0 3px 7px rgba(0, 0, 0, .65);
+	box-shadow: 0 3px 7px rgba(0, 0, 0, .65);
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	z-index: 1000;
+	}
+
+.add-to-home-screen.alert { display: block; }
+	
+	.add-to-home-screen h5 {
+		margin: 0 0 10px 0;
+		font-size: 16px;
+		line-height: 21px;	
+		color: rgb(255, 255, 255);
+		}
+
+	.add-to-home-screen p {
+		padding: 0;
+		font-size: 14px;
+		line-height: 19px;
+		color: rgba(255, 255, 255, .75);
+		}
+
+		.add-to-home-screen p b {
+			font-weight: 700;
+			color: rgb(255, 255, 255);
+			}
+
+	.add-to-home-screen .riser {
+		position: absolute;
+		left: 140px;
+		bottom: -20px;
+		width: 20px;
+		height: 20px;
+		background: url(/-/media/riser.png);
+		background-size: 20px 20px;
+		z-index: 1001;
+		}
+
+	.add-to-home-screen .close-prompt {
+		position: absolute;
+		right: -12px;
+		top: -12px;
+		width: 25px;
+		height: 25px;
+		background: url(/-/media/close.png);
+		background-size: 25px 25px;
+		z-index: 1005;
+		}
+
+
+/* Responsiveness
+--------------------------------------------- */
+
+@media only screen and (device-width: 768px) {
+
+	.add-to-home-screen {
+		position: absolute;
+		display: none;
+		left: 20px;
+		top: 20px;
+		bottom: auto;
+		width: 238px;
+		padding: 20px;
+		background: -moz-linear-gradient(top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.8)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(0,0,0,0.8) 0%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(0,0,0,0.8) 0%,rgba(0,0,0,1) 100%); /* Opera11.10+ */
+		background: -ms-linear-gradient(top, rgba(0,0,0,0.8) 0%,rgba(0,0,0,1) 100%); /* IE10+ */
+		background: linear-gradient(top, rgba(0,0,0,0.8) 0%,rgba(0,0,0,1) 100%); /* W3C */
+		border: 1px solid rgb(255, 255, 255);
+		-webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, .65);
+		-moz-box-shadow: 0 3px 7px rgba(0, 0, 0, .65);
+		box-shadow: 0 3px 7px rgba(0, 0, 0, .65);
+		-webkit-border-radius: 7px;
+		-moz-border-radius: 7px;
+		border-radius: 7px;
+		z-index: 1000;
+		}
+
+	.add-to-home-screen .riser {
+		position: absolute;
+		left: 184px;
+		top: -20px;
+		bottom: auto;
+		width: 20px;
+		height: 20px;
+		background: url(/-/media/riser-ipad.png);
+		background-size: 20px 20px;
+		z-index: 1001;
+		}
+
+	}
